@@ -49,10 +49,10 @@
 		return $result;
 	}
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta charset="utf-8" />
 		<title>Directory Listing of <?php echo($targetDir); ?></title>
 		<link rel="stylesheet" type="text/css" href="http://haiku-files.org/css/style.css" />
 		<link rel="alternate" type="application/rss+xml" title="Raw RSS feed" href="rss/" />
@@ -60,26 +60,22 @@
 	</head>
 	<body>
 		<!--// HEADER //-->
-		<table border="0" width="750px" align="center" cellspacing="0" cellpadding="0">
-			<tr>
-				<td>
-					<img src="http://haiku-files.org/images/haiku-logo.png" border="0" alt="Haiku" />
-				</td>
-				<td>
-					<div id="header" class="header">
-						<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
-						<a href="http://haiku-files.org/">Home</a>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="http://haiku-files.org/css/icons/folder_haiku_16.png" alt="Haiku" />
-						<a href="http://haiku-os.org" title="Go to the Haiku homepage">haiku-os.org</a>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="http://haiku-files.org/css/icons/person_16.png" alt="Contact" />
-						<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a>
-					</div>
-				</td>
-			</tr>
-		</table>
+		<header>
+			<img id='hiaku-logo' src="http://haiku-files.org/images/haiku-logo.png" border="0" alt="Haiku" />
+			<div id="header" class="header">
+				<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
+				<a href="http://haiku-files.org/">Home</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="http://haiku-files.org/css/icons/folder_haiku_16.png" alt="Haiku" />
+				<a href="http://haiku-os.org" title="Go to the Haiku homepage">haiku-os.org</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="http://haiku-files.org/css/icons/person_16.png" alt="Contact" />
+				<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a>
+			</div>
+		</header>
 		<!--// END HEADER //-->
+		
+		
 		<table width="750px" align="center">
 			<tr>
 				<td>

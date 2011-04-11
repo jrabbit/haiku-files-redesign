@@ -1,3 +1,11 @@
+header {
+    width: 750px;
+    font-size: 85% !important;
+    margin: auto;
+}
+#haiku-logo{
+    text-align: left;
+}
 .head {
 	background-color: white;
 	color: #476BB3;
