@@ -61,8 +61,8 @@
 	<body>
 		<!--// HEADER //-->
 		<header>
-			<img id='hiaku-logo' src="http://haiku-files.org/images/haiku-logo.png" border="0" alt="Haiku" />
-			<div id="header" class="header">
+			<img id='hiaku-logo' src="http://haiku-files.org/images/haiku-logo.png" alt="Haiku" />
+			<div id="tete">
 				<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
 				<a href="http://haiku-files.org/">Home</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
@@ -130,7 +130,7 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 ?>
 						<tr class="row<?php echo($row); ?>" onmouseover="this.className='highlight'" onmouseout="this.className='row<?php echo($row); ?>'">
 							<td>
-								<img class="icon" align="middle" src="<?php echo($fileIcon) ?>" alt="Archive" border="0" />
+								<img class="icon" src="<?php echo($fileIcon) ?>" alt="Archive" />
 							</td>
 							<td class="item">
 								<a href="<?php echo($fileURL); ?>" class="link" target="_blank">
