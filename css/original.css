@@ -16,19 +16,29 @@ section {
 /*cellpadding="5" width="100%" cellspacing="0" border="1" class="table"*/
 td {
     padding: 5px;
+    width: auto;
+    text-align: left;
+    display: auto;
+}
+#show-all {
+    text-align:center;
+    display: block;
 }
 tr {
-    width: 750px;
+    width: 100%;
+    display: auto;
 }
 table{
     padding: 0;
-    border: 1px;
-    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #476BB3;
     width: 750px;
+    text-align: center;
     border-collapse: collapse;
 }
 
-#listing {
+#nightlylist {
     width: 750px;
     margin-left:auto; 
     margin-right:auto;

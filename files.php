@@ -101,7 +101,7 @@
 href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-files.org/cd">CD Images</a> <?php
 ?></h2>
 		</section>
-		<article id='listing'>
+		<article id='nightlylist'>
 			<table>
 				<tr class="head">
 					<td colspan="2" class="fileNamePad">
@@ -159,7 +159,7 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 							<td colspan="4">
 								<br/>
 								<div>
-									<a href="<?php echo($_SERVER['PHP_SELF'] . '?show=all'); ?>" class="link">
+									<a id='show-all' href="<?php echo($_SERVER['PHP_SELF'] . '?show=all'); ?>" class="link">
 										Show All Files - Only Current Month Showing
 									</a>
 								</div>
@@ -175,16 +175,9 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 						<br/>
 					</div>
 					<br/>
-   					<div id="copy">
-   						Copyright 2001 - <?php echo(date("Y")); ?> Haiku, Inc. &#151; 
-Haiku&trade;,
-haiku-files.org and the HAIKU logo&reg; are (registered) trademarks of <a href="http://www.haiku-inc.org" 
-target="_blank">Haiku, 
-Inc.</a>
-   						| Proudly Hosted by <a href="http://dreamhost.com" target="_blank">DreamHost</a>.
+   					<div id="copy"> Copyright 2001 - <?php echo(date("Y")); ?> Haiku, Inc. &#151; 
+Haiku&trade;, haiku-files.org and the HAIKU logo&reg; are (registered) trademarks of <a href="http://www.haiku-inc.org" target="_blank">Haiku, Inc.</a>| Proudly Hosted by <a href="http://dreamhost.com" target="_blank">DreamHost</a>.
    					</div>
 					<br/>
-				</td>
-			</tr>
 	</body>
 </html>
