@@ -52,6 +52,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 		<meta charset="utf-8" />
 		<title>Directory Listing of <?php echo($targetDir); ?></title>
 		<link rel="stylesheet" type="text/css" href="http://haiku-files.org/css/style.css" />
