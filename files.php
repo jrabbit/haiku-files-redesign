@@ -1,0 +1,253 @@
+<?php
+	$targetDir = 'raw';
+	$showAll = $_GET['show'] == 'all';
+
+	function dirList($directory, $showAll) {
+		$result = array();
+		$handle = opendir($directory);
+		$fileCount = 0;
+
+		if (!$showAll) {
+			$date = getdate();
+			$cutOff = mktime(0, 0, 0, $date['mon'], 1, $date['year']);
+		}
+
+		// keep going until all files in directory have been read
+		while (($file = readdir($handle)) !== false) {
+			if (is_dir($file) || $file == 'index.php'
+				|| $file == 'index_new.php' || $file == 'index_old.php' || $file[0] == '.')
+				continue;
+
+			$modifyTime = filemtime($file);
+			if (!$showAll && $modifyTime < $cutOff)
+				continue;
+
+			$result[$modifyTime] = $file;
+		}
+
+		krsort($result);
+
+		// find archive dirs for the years
+		if ($showAll) {
+			rewinddir($handle);
+
+			$archives = array();
+			while (($dir = readdir($handle)) !== false) {
+				if ($dir == '.' || $dir == '..' || !is_dir($dir)
+					|| $dir == 'rss' || $dir == 'dlf')
+					continue;
+
+				$archives[$dir] = $dir;
+			}
+
+			krsort($archives);
+			$result = array_merge($result, $archives);
+		}
+
+		closedir($handle);
+
+		return $result;
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Directory Listing of <?php echo($targetDir); ?></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="alternate" type="application/rss+xml" title="Raw RSS feed" href="rss/" />
+		<style type="text/css">
+			.head {
+				background-color: white;
+				color: #476BB3;
+				font-weight: bold;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: medium;
+			}
+
+			.icon { padding: 5px 0px 5px 5px; }
+			.item { padding-top: 14px; }
+
+			.link {
+				font-weight: bold;
+				font-size: medium;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.table { border-color: #476BB3; }
+
+			.rowA { background-color: #E9F0FF; }
+			.rowB { background-color: #FFFFFF; }
+			.highlight { background-color: #DBE6FE; }
+
+			.fileNamePad { padding: 5px 0 10px 10px; }
+			.fileSizePad { padding: 5px 20px 10px 0px; }
+			.fileDatePad { padding: 5px 0px 10px 0px; }
+		</style>
+	</head>
+	<body>
+		<!--// HEADER //-->
+		<table border="0" width="750px" align="center" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+					<img src="../images/haiku-logo.png" border="0" alt="Haiku" />
+				</td>
+				<td>
+					<div id="header" class="header">
+						<img src="../css/icons/folder_home_16.png" alt="Home" />
+						<a href="../">Home</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="../css/icons/folder_haiku_16.png" alt="Haiku" />
+						<a href="http://haiku-os.org" title="Go to the Haiku homepage">haiku-os.org</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="../css/icons/person_16.png" alt="Contact" />
+						<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<!--// END HEADER //-->
+		<table width="750px" align="center">
+			<tr>
+				<td>
+					<h1>Below are Raw Images</h1>
+					They can be used with Qemu, written directly to a USB flash
+					device, or mounted within Haiku.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					As with all other nightly
+images, they extract to 450M and
+					contain a minimum of 3rdparty software as per the
+					"nightly-*" <a href="http://dev.haiku-os.org/browser/haiku/trunk/build/jam/ReleaseBuildProfiles">ReleaseBuildProfiles</a>'s rule.
+					Additional software, such as a
+web browser can be installed with the `installoptionalpackage` command.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>Explanation of tar.xz</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					In addition to providing nightly images as the common
+					compression format ZIP, a newer
+					<a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a>
+					is being utilized for distribution. As you can see, the
+					tar.xz files are roughly half the size of the respective
+					zip file. However, as the
+					<a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a>
+					is a newer compression format, it is less common and
+					usually requires 3rd party software for extracting it.
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<h2>How to extract tar.xz</h2>
+				<ul>
+					<li>
+						<b>Windows:</b> Install <a href="http://www.7-zip.org/download.html">7-Zip</a>
+					</li>
+					<li>
+						<b>Mac OS X:</b> Install <a href="http://wakaba.c3.cx/s/apps/unarchiver.html">The Unarchiver v2.4</a>
+					</li>
+					<li>
+						<b>Haiku/linux/bsd:</b> 
+<i>`tar -xvf FILENAME`</i>
+					</li>
+				</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2 class="icon-hdd-medium"><a href="http://haiku-files.org/anyboot">Anyboot Images</a> | Raw Images | <a
+href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-files.org/cd">CD Images</a> <?php
+?></h2>
+					<table cellpadding="5" width="100%" cellspacing="0" border="1" class="table">
+						<tr class="head">
+							<td colspan="2" class="fileNamePad">
+								<b>File Name</b>
+							</td>
+							<td class="fileSizePad">
+								<b>File Size</b>
+							</td>
+							<td class="fileDatePad">
+								<b>File Date</b>
+							</td>
+						</tr>
+<?php
+	$files = dirList(getcwd(), $showAll);
+	$baseDir = "http://haiku-files.org/" . $targetDir;
+	$index = 0;
+
+	foreach ($files as $file) {
+		$row = $index % 2 == 0 ? 'A' : 'B';
+
+		$isDir = is_dir($file);
+		$fileIcon = '../images/' . ($isDir ? 'folder' : 'bz2') . '.png';
+		$fileSize = $isDir ? '&nbsp;' : number_format(filesize($file) / 1024 / 1024, 2, '.', ',') . 'MB';
+		$fileDate = $isDir ? '&nbsp;' : date("g:iA jS F, Y", filemtime($file));
+		$fileURL = $baseDir . '/' . $file;
+?>
+						<tr class="row<?php echo($row); ?>" onmouseover="this.className='highlight'" onmouseout="this.className='row<?php echo($row); ?>'">
+							<td>
+								<img class="icon" align="middle" src="<?php echo($fileIcon) ?>" alt="Archive" border="0" />
+							</td>
+							<td class="item">
+								<a href="<?php echo($fileURL); ?>" class="link" target="_new">
+									<?php echo($file); ?>
+								</a>
+							</td>
+							<td class="item">
+								<a href="<?php echo($fileURL); ?>" class="link" target="_new">
+									<?php echo($fileSize) ?>
+								</a>
+							</td>
+							<td class="item">
+								<a href="<?php echo($fileURL); ?>" class="link" target="_new">
+									<?php echo($fileDate); ?>
+								</a>
+							</td>
+						</tr>
+<?php
+		$index++;
+	}
+
+	if (!$showAll) {
+		$row = $index % 2 == 0 ? 'A' : 'B';
+?>
+						<tr class="row<?php echo($row); ?>" onmouseover="this.className='highlight'" onmouseout="this.className='row<?php echo($row); ?>'">
+							<td colspan="4">
+								<br/>
+								<div align="center">
+									<a href="<?php echo($_SERVER['PHP_SELF'] . '?show=all'); ?>" class="link">
+										Show All Files - Only Current Month Showing
+									</a>
+								</div>
+								<br/>
+							</td>
+						</tr>
+<?php
+	}
+?>
+					</table>
+					<div class="dotline">
+						<br/>
+					</div>
+					<br/>
+   					<div id="copy">
+   						Copyright 2001 - <?php echo(date("Y")); ?> Haiku, Inc. &#151; 
+Haiku&trade;,
+haiku-files.org and the HAIKU logo&reg; are (registered) trademarks of <a href="http://www.haiku-inc.org" 
+target="_new">Haiku, 
+Inc.</a>
+   						| Proudly Hosted by <a href="http://dreamhost.com" target="_new">DreamHost</a>.
+   					</div>
+					<br/>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
