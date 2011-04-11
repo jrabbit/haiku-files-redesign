@@ -13,6 +13,31 @@ section {
     margin: auto;
 }
 
+/*cellpadding="5" width="100%" cellspacing="0" border="1" class="table"*/
+td {
+    padding: 5px;
+}
+tr {
+    width: 750px;
+}
+table{
+    padding: 0;
+    border: 1px;
+    display: block;
+    width: 750px;
+    border-collapse: collapse;
+}
+
+#listing {
+    width: 750px;
+    margin-left:auto; 
+    margin-right:auto;
+    border-spacing: 0px;
+    border-width: 1px;
+    text-align: center;
+    border-color: #476BB3;
+}
+
 .head {
 	background-color: white;
 	color: #476BB3;
@@ -30,7 +55,6 @@ section {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.table { border-color: #476BB3; }
 
 .rowA { background-color: #E9F0FF; }
 .rowB { background-color: #FFFFFF; }

@@ -15,7 +15,7 @@
 		// keep going until all files in directory have been read
 		while (($file = readdir($handle)) !== false) {
 			if (is_dir($file) || $file == 'index.php'
-				|| $file == 'index_new.php' || $file == 'index_old.php' || $file[0] == '.')
+				|| $file == 'index_blank.php' || $file == 'index_old.php' || $file[0] == '.')
 				continue;
 
 			$modifyTime = filemtime($file);
@@ -81,38 +81,39 @@
 			<h2>Explanation of tar.xz</h2>
 			<p>In addition to providing nightly images as the common compression format ZIP, a newer <a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a> is being utilized for distribution. As you can see, the tar.xz files are roughly half the size of the respective zip file. However, as the <a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a> is a newer compression format, it is less common and usually requires 3rd party software for extracting it.</p>
 		</section>
-		<section id='extact'>
+		<section id='extract'>
 			<h2>How to extract tar.xz</h2>
-				<ul>
-					<li>
-						<b>Windows:</b> Install <a href="http://www.7-zip.org/download.html">7-Zip</a>
-					</li>
-					<li>
-						<b>Mac OS X:</b> Install <a href="http://wakaba.c3.cx/s/apps/unarchiver.html">The Unarchiver v2.4</a>
-					</li>
-					<li>
-						<b>Haiku/linux/bsd:</b> 
-							<i>`tar -xvf FILENAME`</i>
-					</li>
-				</ul>
-		<table width="750px" align="center">
-
-				<td>
+			<ul>
+				<li>
+					<b>Windows:</b> Install <a href="http://www.7-zip.org/download.html">7-Zip</a>
+				</li>
+				<li>
+					<b>Mac OS X:</b> Install <a href="http://wakaba.c3.cx/s/apps/unarchiver.html">The Unarchiver v2.4</a>
+				</li>
+				<li>
+					<b>Haiku/linux/bsd:</b> 
+						<i>`tar -xvf FILENAME`</i>
+				</li>
+			</ul>
+		</section>
+		<section id='switch-kind'>
 					<h2 class="icon-hdd-medium"><a href="http://haiku-files.org/anyboot">Anyboot Images</a> | Raw Images | <a
 href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-files.org/cd">CD Images</a> <?php
 ?></h2>
-					<table cellpadding="5" width="100%" cellspacing="0" border="1" class="table">
-						<tr class="head">
-							<td colspan="2" class="fileNamePad">
-								<b>File Name</b>
-							</td>
-							<td class="fileSizePad">
-								<b>File Size</b>
-							</td>
-							<td class="fileDatePad">
-								<b>File Date</b>
-							</td>
-						</tr>
+		</section>
+		<article id='listing'>
+			<table>
+				<tr class="head">
+					<td colspan="2" class="fileNamePad">
+						<b>File Name</b>
+					</td>
+					<td class="fileSizePad">
+						<b>File Size</b>
+					</td>
+					<td class="fileDatePad">
+						<b>File Date</b>
+					</td>
+				</tr>
 <?php
 	$files = dirList(getcwd(), $showAll);
 	$baseDir = "http://haiku-files.org/" . $targetDir;
@@ -132,17 +133,17 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 								<img class="icon" align="middle" src="<?php echo($fileIcon) ?>" alt="Archive" border="0" />
 							</td>
 							<td class="item">
-								<a href="<?php echo($fileURL); ?>" class="link" target="_new">
+								<a href="<?php echo($fileURL); ?>" class="link" target="_blank">
 									<?php echo($file); ?>
 								</a>
 							</td>
 							<td class="item">
-								<a href="<?php echo($fileURL); ?>" class="link" target="_new">
+								<a href="<?php echo($fileURL); ?>" class="link" target="_blank">
 									<?php echo($fileSize) ?>
 								</a>
 							</td>
 							<td class="item">
-								<a href="<?php echo($fileURL); ?>" class="link" target="_new">
+								<a href="<?php echo($fileURL); ?>" class="link" target="_blank">
 									<?php echo($fileDate); ?>
 								</a>
 							</td>
@@ -157,7 +158,7 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 						<tr class="row<?php echo($row); ?>" onmouseover="this.className='highlight'" onmouseout="this.className='row<?php echo($row); ?>'">
 							<td colspan="4">
 								<br/>
-								<div align="center">
+								<div>
 									<a href="<?php echo($_SERVER['PHP_SELF'] . '?show=all'); ?>" class="link">
 										Show All Files - Only Current Month Showing
 									</a>
@@ -169,6 +170,7 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 	}
 ?>
 					</table>
+					</article>
 					<div class="dotline">
 						<br/>
 					</div>
@@ -177,13 +179,12 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
    						Copyright 2001 - <?php echo(date("Y")); ?> Haiku, Inc. &#151; 
 Haiku&trade;,
 haiku-files.org and the HAIKU logo&reg; are (registered) trademarks of <a href="http://www.haiku-inc.org" 
-target="_new">Haiku, 
+target="_blank">Haiku, 
 Inc.</a>
-   						| Proudly Hosted by <a href="http://dreamhost.com" target="_new">DreamHost</a>.
+   						| Proudly Hosted by <a href="http://dreamhost.com" target="_blank">DreamHost</a>.
    					</div>
 					<br/>
 				</td>
 			</tr>
-		</table>
 	</body>
 </html>
