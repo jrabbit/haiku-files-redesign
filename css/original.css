@@ -1,0 +1,26 @@
+.head {
+	background-color: white;
+	color: #476BB3;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+}
+
+.icon { padding: 5px 0px 5px 5px; }
+.item { padding-top: 14px; }
+
+.link {
+	font-weight: bold;
+	font-size: medium;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.table { border-color: #476BB3; }
+
+.rowA { background-color: #E9F0FF; }
+.rowB { background-color: #FFFFFF; }
+.highlight { background-color: #DBE6FE; }
+
+.fileNamePad { padding: 5px 0 10px 10px; }
+.fileSizePad { padding: 5px 20px 10px 0px; }
+.fileDatePad { padding: 5px 0px 10px 0px; }

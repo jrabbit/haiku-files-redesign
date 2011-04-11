@@ -54,53 +54,26 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Directory Listing of <?php echo($targetDir); ?></title>
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="http://haiku-files.org/css/style.css" />
 		<link rel="alternate" type="application/rss+xml" title="Raw RSS feed" href="rss/" />
-		<style type="text/css">
-			.head {
-				background-color: white;
-				color: #476BB3;
-				font-weight: bold;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: medium;
-			}
-
-			.icon { padding: 5px 0px 5px 5px; }
-			.item { padding-top: 14px; }
-
-			.link {
-				font-weight: bold;
-				font-size: medium;
-				font-family: Arial, Helvetica, sans-serif;
-			}
-
-			.table { border-color: #476BB3; }
-
-			.rowA { background-color: #E9F0FF; }
-			.rowB { background-color: #FFFFFF; }
-			.highlight { background-color: #DBE6FE; }
-
-			.fileNamePad { padding: 5px 0 10px 10px; }
-			.fileSizePad { padding: 5px 20px 10px 0px; }
-			.fileDatePad { padding: 5px 0px 10px 0px; }
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/original.css" />
 	</head>
 	<body>
 		<!--// HEADER //-->
 		<table border="0" width="750px" align="center" cellspacing="0" cellpadding="0">
 			<tr>
 				<td>
-					<img src="../images/haiku-logo.png" border="0" alt="Haiku" />
+					<img src="http://haiku-files.org/images/haiku-logo.png" border="0" alt="Haiku" />
 				</td>
 				<td>
 					<div id="header" class="header">
-						<img src="../css/icons/folder_home_16.png" alt="Home" />
-						<a href="../">Home</a>
+						<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
+						<a href="http://haiku-files.org/">Home</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="../css/icons/folder_haiku_16.png" alt="Haiku" />
+						<img src="http://haiku-files.org/css/icons/folder_haiku_16.png" alt="Haiku" />
 						<a href="http://haiku-os.org" title="Go to the Haiku homepage">haiku-os.org</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="../css/icons/person_16.png" alt="Contact" />
+						<img src="http://haiku-files.org/css/icons/person_16.png" alt="Contact" />
 						<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a>
 					</div>
 				</td>
@@ -186,7 +159,7 @@ href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-f
 		$row = $index % 2 == 0 ? 'A' : 'B';
 
 		$isDir = is_dir($file);
-		$fileIcon = '../images/' . ($isDir ? 'folder' : 'bz2') . '.png';
+		$fileIcon = 'http://haiku-files.org/images/' . ($isDir ? 'folder' : 'bz2') . '.png';
 		$fileSize = $isDir ? '&nbsp;' : number_format(filesize($file) / 1024 / 1024, 2, '.', ',') . 'MB';
 		$fileDate = $isDir ? '&nbsp;' : date("g:iA jS F, Y", filemtime($file));
 		$fileURL = $baseDir . '/' . $file;
