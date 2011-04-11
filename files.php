@@ -75,46 +75,14 @@
 		</header>
 		<!--// END HEADER //-->
 		
-		
-		<table width="750px" align="center">
-			<tr>
-				<td>
-					<h1>Below are Raw Images</h1>
-					They can be used with Qemu, written directly to a USB flash
-					device, or mounted within Haiku.
-				</td>
-			</tr>
-			<tr>
-				<td>
-					As with all other nightly
-images, they extract to 450M and
-					contain a minimum of 3rdparty software as per the
-					"nightly-*" <a href="http://dev.haiku-os.org/browser/haiku/trunk/build/jam/ReleaseBuildProfiles">ReleaseBuildProfiles</a>'s rule.
-					Additional software, such as a
-web browser can be installed with the `installoptionalpackage` command.
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<h2>Explanation of tar.xz</h2>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					In addition to providing nightly images as the common
-					compression format ZIP, a newer
-					<a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a>
-					is being utilized for distribution. As you can see, the
-					tar.xz files are roughly half the size of the respective
-					zip file. However, as the
-					<a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a>
-					is a newer compression format, it is less common and
-					usually requires 3rd party software for extracting it.
-				</td>
-			</tr>
-			<tr>
-				<td>
-				<h2>How to extract tar.xz</h2>
+		<section id='instructions'>
+			<h1>Below are Raw Images</h1> 
+			<p>They can be used with Qemu, written directly to a USB flash device, or mounted within Haiku. As with all other nightly images, they extract to 450M and contain a minimum of 3rdparty software as per the "nightly-*" <a href="http://dev.haiku-os.org/browser/haiku/trunk/build/jam/ReleaseBuildProfiles">ReleaseBuildProfiles</a>'s rule. Additional software, such as a web browser can be installed with the `installoptionalpackage` command. </p>
+			<h2>Explanation of tar.xz</h2>
+			<p>In addition to providing nightly images as the common compression format ZIP, a newer <a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a> is being utilized for distribution. As you can see, the tar.xz files are roughly half the size of the respective zip file. However, as the <a href="http://en.wikipedia.org/wiki/XZ_Utils">XZ format</a> is a newer compression format, it is less common and usually requires 3rd party software for extracting it.</p>
+		</section>
+		<section id='extact'>
+			<h2>How to extract tar.xz</h2>
 				<ul>
 					<li>
 						<b>Windows:</b> Install <a href="http://www.7-zip.org/download.html">7-Zip</a>
@@ -124,12 +92,11 @@ web browser can be installed with the `installoptionalpackage` command.
 					</li>
 					<li>
 						<b>Haiku/linux/bsd:</b> 
-<i>`tar -xvf FILENAME`</i>
+							<i>`tar -xvf FILENAME`</i>
 					</li>
 				</ul>
-				</td>
-			</tr>
-			<tr>
+		<table width="750px" align="center">
+
 				<td>
 					<h2 class="icon-hdd-medium"><a href="http://haiku-files.org/anyboot">Anyboot Images</a> | Raw Images | <a
 href="http://haiku-files.org/vmware">VMware Images</a> | <a href="http://haiku-files.org/cd">CD Images</a> <?php

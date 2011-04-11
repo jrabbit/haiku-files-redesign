@@ -3,9 +3,16 @@ header {
     font-size: 85% !important;
     margin: auto;
 }
-#haiku-logo{
+#haiku-logo {
     text-align: left;
 }
+
+section {
+    width: 750px;
+    text-align: justify;
+    margin: auto;
+}
+
 .head {
 	background-color: white;
 	color: #476BB3;
