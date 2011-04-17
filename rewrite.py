@@ -8,36 +8,37 @@ import hurry.filesize
 
 @route('/anyboot')
 def anyboot():
-    index('anyboot')    
+    return index('anyboot')    
 
 @route('/raw')
 def raw():
-    index('raw')
+    return index('raw')
 
 @route('/vmware')
 def vmware():
-    index('vmware')
+    return index('vmware')
     
 @route('/cd')
 def cd():
-    index('cd')
+    return index('cd')
+
+@route('/css/:filename#.+#')
+def css_static(filename):
+    return static_file(filename, root='./css')
+    
+@route('/js/:filename')
+def js_static(filename):
+    return static_file(filename, root='./js')
 
 def index(location):
     htmls = """"""
     for item in filelist(location):
         archiv = "http://haiku-files.org/images/bz2.png"
-        htmls = htmls + """<tr class="file-item">
-        	<td> <img class="icon" src="%(folder)s" alt="Archive" /> </td>
-        	<td class='item-data'> <a href="%(src-link)s"> %(src-name)s </a> </td>
-        	<td class='item-data'> <a href="%(src-link)s"> %(size)s </a> </td>
-        	<td class='item-data'> <a href="%(src-link)s"> %(date)s </a> </td>
-        </tr>""" \
-        %  {'folder' : archiv, 'src-link': "http://haiku-files.org" + item['name'], 'src-name': item['name'], 'size': item['size'], 'date': item['date'] }
-        print htmls
-        
+        htmls = htmls + "<tr class='file-item'> <td> <img class='icon' src='%(folder)s' alt='Archive' /> </td> <td class='item'> <a href='%(srclink)s'> %(srcname)s </a> </td> <td class='item'> <a href='%(srclink)s'> %(size)s </a> </td> <td class='item'> <a href='%(srclink)s'> %(date)s </a> </td> </tr>" \
+        %  {'folder' : archiv, 'srclink': "http://haiku-files.org" + item['name'], 'srcname': item['name'], 'size': item['size'], 'date': item['date'] }        
     #http://haiku-files.org/raw/haiku-nightly-r41256-x86gcc4hybrid-raw.zip
     instructions = paragraphs.instructions[location]
-    return template('files.tpl', instructions = instructions  )
+    return template('files.tpl', instructions = instructions, htmls = htmls, location= location  )
 
 def filedict(location):
     for x in os.listdir('./%s' % location):
