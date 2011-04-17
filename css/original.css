@@ -73,7 +73,7 @@ table{
 }
 
 tr:nth-child(even) {
-    background-color: #999;
+    background-color: #E9F0FF;
 }
 
 .rowA { background-color: #E9F0FF; }
