@@ -1,20 +1,29 @@
 header {
     width: 750px;
-    font-size: 85% !important;
-    margin: auto;
+    font-size: 85%;
     background: #EEE;
+    top: 0;
+    left: 21%;
+    text-align: center;
     background-image: url(http://www.haiku-os.org/docs/userguide/images/logo.png);
     background-repeat: no-repeat;
     height: 84px;
+    margin: auto;
+    
 }
-#haiku-logo {
-    text-align: left;
-}
+#banner{
+    width: 100%;
+    height: 85px;
+    left: 0px;
+    top: 0;
+    background: #EEE;
+    
+} 
 
 .title{
     position: relative;
     top: 39px;
-    left: -345px;
+    left: -30px;
     color: #333;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -23,6 +32,11 @@ header {
     display: block;
     font-size: 16px;
 }
+
+/*#tete{
+    float:right;
+    display: inline;
+}*/
 
 section {
     width: 750px;
@@ -57,10 +71,6 @@ table{
     width: 750px;
     text-align: center;
     border-collapse: collapse;
-}
-#tete{
-    float:right;
-    display: inline;
 }
 #nightlylist {
     width: 750px;

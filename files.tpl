@@ -11,10 +11,11 @@
 		<link rel="stylesheet" type="text/css" href="css/original.css" />
 	</head>
 	<body>
-		<!--// HEADER //-->
+		<div id='banner'>
 		<header>
+			<h1 class='title'>FILES ARCHIVE</h1>
 			<div id="tete">
-				<h1 class='title'>FILES ARCHIVE</h1>
+				
 					
 				<!-- 	<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
 				<a href="http://haiku-files.org/">Home</a>
@@ -26,6 +27,7 @@
 				<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a> -->
 			</div>
 		</header>
+		</div>
 		<!--// END HEADER //-->
 		
 		<section id='instructions'>
