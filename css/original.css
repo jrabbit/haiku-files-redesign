@@ -2,9 +2,26 @@ header {
     width: 750px;
     font-size: 85% !important;
     margin: auto;
+    background: #EEE;
+    background-image: url(http://www.haiku-os.org/docs/userguide/images/logo.png);
+    background-repeat: no-repeat;
+    height: 84px;
 }
 #haiku-logo {
     text-align: left;
+}
+
+.title{
+    position: relative;
+    top: 39px;
+    left: -345px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: Myriad Pro,Myriad Web Pro Regular,Lucida Grande,Geneva,Trebuchet MS,sans-serif;
+    font-weight: normal;
+    display: block;
+    font-size: 16px;
 }
 
 section {
@@ -76,8 +93,6 @@ tr:nth-child(even) {
     background-color: #E9F0FF;
 }
 
-.rowA { background-color: #E9F0FF; }
-.rowB { background-color: #FFFFFF; }
 .highlight { background-color: #DBE6FE; }
 
 .fileNamePad { padding: 5px 0 10px 10px; }

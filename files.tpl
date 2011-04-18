@@ -13,16 +13,17 @@
 	<body>
 		<!--// HEADER //-->
 		<header>
-			<img id='hiaku-logo' src="http://haiku-files.org/images/haiku-logo.png" alt="Haiku" />
 			<div id="tete">
-				<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
+				<h1 class='title'>FILES ARCHIVE</h1>
+					
+				<!-- 	<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
 				<a href="http://haiku-files.org/">Home</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<img src="http://haiku-files.org/css/icons/folder_haiku_16.png" alt="Haiku" />
 				<a href="http://haiku-os.org" title="Go to the Haiku homepage">haiku-os.org</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<img src="http://haiku-files.org/css/icons/person_16.png" alt="Contact" />
-				<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a>
+				<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a> -->
 			</div>
 		</header>
 		<!--// END HEADER //-->
