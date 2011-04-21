@@ -15,21 +15,9 @@
 		<header>
 			<h1 class='title'>FILES ARCHIVE</h1>
 			<div id="tete">
-				
-					
-				<!-- 	<img src="http://haiku-files.org/css/icons/folder_home_16.png" alt="Home" />
-				<a href="http://haiku-files.org/">Home</a>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<img src="http://haiku-files.org/css/icons/folder_haiku_16.png" alt="Haiku" />
-				<a href="http://haiku-os.org" title="Go to the Haiku homepage">haiku-os.org</a>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<img src="http://haiku-files.org/css/icons/person_16.png" alt="Contact" />
-				<a href="http://haiku-os.org/contact" title="Contact us with your feedback or suggestions">Contact Us</a> -->
 			</div>
 		</header>
-		</div>
-		<!--// END HEADER //-->
-		
+		</div>		
 		<section id='instructions'>
 			{{!instructions}}
 			<p>As with all other nightly images, they extract to 450M and contain a minimum of 3rdparty software as per the "nightly-*" <a href="http://dev.haiku-os.org/browser/haiku/trunk/build/jam/ReleaseBuildProfiles">ReleaseBuildProfiles</a>'s rule. Additional software, such as a web browser can be installed with the `installoptionalpackage` command. </p>
@@ -93,8 +81,7 @@
 						<br/>
 					</div>
 					<br/>
-   					<div id="copy"> Copyright 2001 - 2011 Haiku, Inc. &#151; 
-Haiku&trade;, haiku-files.org and the HAIKU logo&reg; are (registered) trademarks of <a href="http://www.haiku-inc.org" target="_blank">Haiku, Inc.</a>| Proudly Hosted by <a href="http://dreamhost.com" target="_blank">DreamHost</a>.
+   					<div id="copy"> Copyright 2001 - 2011 Haiku, Inc. &mdash; Haiku&trade;, haiku-files.org and the HAIKU logo&reg; are (registered) trademarks of <a href="http://www.haiku-inc.org" target="_blank">Haiku, Inc.</a>| Proudly Hosted by <a href="http://dreamhost.com" target="_blank">DreamHost</a>.
    					</div>
 					<br/>
 	</body>
