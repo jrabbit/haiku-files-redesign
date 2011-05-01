@@ -30,6 +30,16 @@ def css_static(filename):
 def js_static(filename):
     return static_file(filename, root='./js')
 
+@route('/favicon.png')
+def favicon():
+    return static_file('favicon.png')
+
+@route('/')
+@route('/index.html')
+def mainpage():
+    return static_file('index.html')
+
+
 def index(location):
     htmls = """"""
     for item in filelist(location):
@@ -48,11 +58,11 @@ def filedict(location):
             yield {'name': x, 'size':  hurry.filesize.size(os.path.getsize(fullname)), 'date': date}
 
 
-@route('/:location')
-def filelist(location):
-    lst = [x for x in filedict(location)]
-    lst.sort(reverse=True)
-    return lst
+# @route('/:location')
+# def filelist(location):
+#     lst = [x for x in filedict(location)]
+#     lst.sort(reverse=True)
+#     return lst
 
 if __name__ == "__main__":
     debug(True)
