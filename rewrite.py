@@ -59,10 +59,10 @@ def filedict(location):
 
 
 # @route('/:location')
-# def filelist(location):
-#     lst = [x for x in filedict(location)]
-#     lst.sort(reverse=True)
-#     return lst
+def filelist(location):
+    lst = [x for x in filedict(location)]
+    lst.sort(reverse=True)
+    return lst
 
 if __name__ == "__main__":
     debug(True)
